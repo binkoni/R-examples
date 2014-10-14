@@ -1,0 +1,5 @@
+library(treemap)
+data <- read.csv('data.csv')
+data$등록일 <- substr(data$등록일,0,10)
+data$등록일 <- as.Date(data$등록일)
+treemap(data,vSize='일련번호', index=c('등록일','제목'))
